@@ -1,0 +1,23 @@
+{
+  "name": "lapiz-postgres",
+  "version": "1.0.0-beta",
+  "description": "An npm library of abstract classes to create a postgres SDK",
+  "main": "index.js",
+  "imports": {
+  	"#lib/*": "./lib/*"
+  },
+  "exports": {
+  	"db": "./lib/db/index.js",
+	"query": "./lib/query/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "pg": "^8.20.0"
+  }
+}
