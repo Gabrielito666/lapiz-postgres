@@ -17,7 +17,7 @@ A lightweight and structured query system for PostgreSQL using `pg`. This packag
 ## 📥 Installation
 
 ```bash
-npm install pg
+npm install lapiz-postgres
 ```
 
 ---
@@ -31,6 +31,18 @@ All queries must extend the base `Query` class and implement the `.run()` method
 ```js
 const Query = require("lapiz-postgres/query");
 
+/**
+ * @import {IQuery} from "lapiz-postgres/query"
+ */
+ /**
+  * @typedef {{ id_ number }} Input
+  * @typedef {{id: number; name: string; email: string|null}|null>}}
+  */
+/**
+ * @class
+ * @extends {Query<"get-user-by-id", Input, Output>} 
+ * @implements {IQuery<"get-user-by-id", Input, Output>} 
+ */
 class GetUserById extends Query {
   constructor() {
     super("get-user-by-id", `
@@ -40,6 +52,7 @@ class GetUserById extends Query {
     `);
   }
 
+ /** @type {IQuery<"get-user-by-id", Input, Output>["run"]}*/
   async run(pool, input) {
     const result = await this.rawCall(pool, [input.id]);
     return result.rows[0] || null;
