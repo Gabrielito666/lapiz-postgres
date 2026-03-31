@@ -1,6 +1,6 @@
 {
   "name": "lapiz-postgres",
-  "version": "1.0.2-beta",
+  "version": "1.0.3-beta",
   "description": "An npm library of abstract classes to create a postgres SDK",
   "main": "index.js",
   "imports": {
