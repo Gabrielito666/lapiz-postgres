@@ -4,7 +4,8 @@
   "description": "An npm library of abstract classes to create a postgres SDK",
   "main": "index.js",
   "imports": {
-  	"#lib/*": "./lib/*"
+  	"#lib/*": "./lib/*",
+  	"#test/*": "./test/*"
   },
   "exports": {
   	"./db": { "default": "./lib/db/index.js" },
@@ -12,7 +13,9 @@
 	"./test-helpers": { "default": "./lib/test-helpers/index.js" }
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test test/unit/index.test.js test/integration/index.test.js",
+    "test:unit": "node --test test/unit/index.test.js",
+    "test:integration": "node --test test/integration/index.test.js"
   },
   "keywords": [],
   "author": "",
