@@ -36,7 +36,7 @@ const Query2 = class extends Query
 		super("query-2", "SELECT");
 	}
  	/** @type {IQuery<"query-2", { name2: string }, number>["run"]}*/
-	run(pool, input)
+	async run(pool, input)
 	{
 		return 666;
 	}
